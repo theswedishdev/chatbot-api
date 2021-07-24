@@ -7,6 +7,8 @@ import (
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	
 	temperature := r.URL.Query().Get("temperature")
 	
 	if (temperature == "") {
@@ -20,7 +22,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	
-	temperatureInCelsius := (temperatureInFahrenheit * 1.8) + 32
+	temperatureInCelsius := (temperatureInFahrenheit - 32) * 5 / 9
 	
 	fmt.Fprintf(w, "%.2f°C", temperatureInCelsius)
 }
