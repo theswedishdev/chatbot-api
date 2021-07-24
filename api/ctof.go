@@ -2,7 +2,6 @@ package ctof
 
 import (
 	"fmt"
-	"math"
 	"net/http"
 	"strconv"
 )
@@ -21,7 +20,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	
-	temperatureInFahrenheit := math.Round(temperatureInCelsius * 1.8) + 32
+	temperatureInFahrenheit := (temperatureInCelsius * 1.8) + 32
 	
-	fmt.Fprintf(w, "%02f°F", temperatureInFahrenheit)
+	fmt.Fprintf(w, "%.2f°F", temperatureInFahrenheit)
 }
