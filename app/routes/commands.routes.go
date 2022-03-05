@@ -13,4 +13,5 @@ func CommandsRoutes(app fiber.Router) {
 	AdviceCommandsRoutes(r)
 	JokeCommandsRoutes(r)
 	TemperatureCommandsRoutes(r)
+	TimeCommandsRoutes(r)
 }
