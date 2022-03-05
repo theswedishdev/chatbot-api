@@ -64,5 +64,19 @@ Convert a temperature from Kelvin to Fahrenheit.
 GET /commands/temperature/ktof/{temperature}
 ```
 
+### current time, 12-hour format
+Get the current time in a 12-hour format for a certain timezone.
+
+```http
+GET /commands/time/current/12/{timezone}
+```
+
+### current time, 24-hour format
+Get the current time in a 24-hour format for a certain timezone.
+
+```http
+GET /commands/time/current/24/{timezone}
+```
+
 ## License
 [MIT License](./LICENSE)
